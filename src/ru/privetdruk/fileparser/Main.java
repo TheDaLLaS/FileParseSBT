@@ -9,8 +9,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             Tree treeData = new DataTree();
-            String inputData = FileManagement.convertFileToString(ClassLoader.getSystemResource("Data.txt").getPath());
-            DataParser.getDataTree(treeData, inputData);
+            DataParser.getDataTree(treeData, FileManagement.convertFileToString(ClassLoader.getSystemResource("Data.txt").getPath()));
             treeData.printTree();
             FileManagement.saveListToFile("result.txt", treeData.getTreeList());
         } catch (Exception e) {
